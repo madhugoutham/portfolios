@@ -623,7 +623,7 @@ export default function Home() {
 
             <RevealSection delay={0.25}>
               <div className="flex flex-wrap gap-3 mb-12">
-                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn-primary">
+                <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn-cta" aria-label="Schedule a call to discuss opportunities">
                   <Icon name="calendar" />
                   Schedule a Call
                 </a>
@@ -661,7 +661,7 @@ export default function Home() {
           </section>
 
           {/* ===== IMPACT ===== */}
-          <section id="impact" className="py-20">
+          <section id="impact" className="py-24">
             <RevealSection>
               <h2 className="text-3xl font-black mb-2">Impact</h2>
               <p className="text-[var(--foreground-secondary)] mb-8">Measurable results, not just metrics. Hover for context.</p>
@@ -675,7 +675,7 @@ export default function Home() {
           </section>
 
           {/* ===== METHODOLOGY ===== */}
-          <section id="methodology" className="py-20">
+          <section id="methodology" className="py-24">
             <RevealSection>
               <h2 className="text-3xl font-black mb-2">How I Build ML Systems</h2>
               <p className="text-[var(--foreground-secondary)] mb-8">My approach to production machine learning.</p>
@@ -702,7 +702,7 @@ export default function Home() {
           </section>
 
           {/* ===== EXPERIENCE ===== */}
-          <section id="experience" className="py-20">
+          <section id="experience" className="py-24">
             <RevealSection>
               <h2 className="text-3xl font-black mb-2">Experience</h2>
               <p className="text-[var(--foreground-secondary)] mb-8">Building at scale across industries.</p>
@@ -741,7 +741,7 @@ export default function Home() {
           </section>
 
           {/* ===== PROJECTS ===== */}
-          <section id="projects" className="py-20">
+          <section id="projects" className="py-24">
             <RevealSection>
               <h2 className="text-3xl font-black mb-2">Featured Projects</h2>
               <p className="text-[var(--foreground-secondary)] mb-8">Click any project for the full case study with architecture diagrams and lessons learned.</p>
@@ -755,7 +755,7 @@ export default function Home() {
           </section>
 
           {/* ===== SKILLS ===== */}
-          <section id="skills" className="py-20">
+          <section id="skills" className="py-24">
             <RevealSection>
               <h2 className="text-3xl font-black mb-2">Skills & Credentials</h2>
               <p className="text-[var(--foreground-secondary)] mb-8">Technical expertise with proficiency levels.</p>
