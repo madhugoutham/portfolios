@@ -230,7 +230,7 @@ function Sidebar({ activeSection, theme, onToggleTheme }: { activeSection: strin
     <aside className="sidebar hidden lg:flex">
       <div className="flex items-center justify-between mb-8">
         <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-[var(--accent)]/30">
-          <Image src="/profile.jpg" alt="Madhu Goutham" width={56} height={56} className="w-full h-full object-cover object-top" priority />
+          <Image src="/portfolios/profile.jpg" alt="Madhu Goutham" width={56} height={56} className="w-full h-full object-cover object-top" priority />
         </div>
         <ThemeToggle theme={theme} onToggle={onToggleTheme} />
       </div>
@@ -263,7 +263,7 @@ function Sidebar({ activeSection, theme, onToggleTheme }: { activeSection: strin
             </a>
           ))}
         </div>
-        <a href="/resume.pdf" download className="btn-secondary w-full justify-center">
+        <a href="/portfolios/resume.pdf" download className="btn-secondary w-full justify-center">
           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
           </svg>
@@ -281,7 +281,7 @@ function MobileHeader({ theme, onToggleTheme }: { theme: string; onToggleTheme: 
       <div className="flex items-center justify-between px-4 py-3">
         <div className="flex items-center gap-3">
           <div className="w-9 h-9 rounded-full overflow-hidden border border-[var(--accent)]/30">
-            <Image src="/profile.jpg" alt="Madhu" width={36} height={36} className="w-full h-full object-cover" />
+            <Image src="/portfolios/profile.jpg" alt="Madhu" width={36} height={36} className="w-full h-full object-cover" />
           </div>
           <span className="font-semibold">Madhu Goutham</span>
         </div>
@@ -299,7 +299,7 @@ function MobileHeader({ theme, onToggleTheme }: { theme: string; onToggleTheme: 
           {navLinks.map((link) => (
             <a key={link.id} href={`#${link.id}`} onClick={() => setIsOpen(false)} className="block py-2 text-[var(--foreground-secondary)] hover:text-[var(--foreground)]">{link.label}</a>
           ))}
-          <a href="/resume.pdf" download className="block py-2 text-[var(--accent)] font-medium">Download Resume</a>
+          <a href="/portfolios/resume.pdf" download className="block py-2 text-[var(--accent)] font-medium">Download Resume</a>
         </nav>
       )}
     </header>
@@ -373,7 +373,7 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </a>
-                <a href="/resume.pdf" download className="btn-secondary">
+                <a href="/portfolios/resume.pdf" download className="btn-secondary">
                   Download Resume
                 </a>
               </div>
@@ -560,7 +560,7 @@ export default function Home() {
                     </svg>
                     Email Me
                   </a>
-                  <a href="/resume.pdf" download className="btn-secondary">
+                  <a href="/portfolios/resume.pdf" download className="btn-secondary">
                     Download Resume
                   </a>
                 </div>
