@@ -174,9 +174,9 @@ export default function Home() {
         </div>
       </header>
 
-      <div className="container-narrow pt-32 pb-24">
+      <div className="container-narrow pb-24" style={{ paddingTop: '150px' }}>
         {/* ===== HERO ===== */}
-        <section className="mb-32 md:min-h-[80vh] flex flex-col md:flex-row items-start md:justify-between gap-12 md:gap-12 pt-8 md:pt-0">
+        <section className="mb-32 md:min-h-[80vh] flex flex-col md:flex-row items-start md:justify-between gap-12 pt-16 md:pt-8 overflow-visible">
           <div className="flex-1 md:pt-16 min-w-0 w-full">
             <Reveal>
               <div className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full">
@@ -223,22 +223,21 @@ export default function Home() {
             </Reveal>
           </div>
 
-          <Reveal delay={0.4}>
-            <div className="hidden md:block pt-12 flex-shrink-0">
-              <IDCard />
-            </div>
-            {/* Mobile Fallback */}
-            <div className="block md:hidden w-40 h-40 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 rotate-3 mx-auto">
-              <Image
-                src={`${BASE_PATH}/profile.jpg`}
-                alt="Profile"
-                width={160}
-                height={160}
-                className="w-full h-full object-cover"
-                priority
-              />
-            </div>
-          </Reveal>
+          {/* ID Card - NO Reveal wrapper to prevent clipping */}
+          <div className="hidden md:block pt-20 flex-shrink-0 overflow-visible">
+            <IDCard />
+          </div>
+          {/* Mobile Fallback */}
+          <div className="block md:hidden w-40 h-40 rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 rotate-3 mx-auto">
+            <Image
+              src={`${BASE_PATH}/profile.jpg`}
+              alt="Profile"
+              width={160}
+              height={160}
+              className="w-full h-full object-cover"
+              priority
+            />
+          </div>
         </section>
 
         {/* ===== RESEARCH ===== */}

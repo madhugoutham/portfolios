@@ -2,7 +2,7 @@
 
 import { motion, useSpring, useTransform, useMotionValue } from "framer-motion";
 import Image from "next/image";
-import { useRef, useEffect } from "react";
+import { useRef } from "react";
 
 const BASE_PATH = "/portfolios";
 
@@ -14,13 +14,13 @@ export default function IDCard() {
     const y = useMotionValue(0);
 
     // Spring physics for smooth "hanging" feel
-    const rotateX = useSpring(useTransform(y, [-100, 100], [30, -30]), {
+    const rotateX = useSpring(useTransform(y, [-100, 100], [15, -15]), {
         stiffness: 150,
         damping: 20,
         mass: 1.5,
     });
 
-    const rotateY = useSpring(useTransform(x, [-100, 100], [-30, 30]), {
+    const rotateY = useSpring(useTransform(x, [-100, 100], [-15, 15]), {
         stiffness: 150,
         damping: 20,
         mass: 1.5,
@@ -44,71 +44,75 @@ export default function IDCard() {
 
     return (
         <div
-            className="perspective-1000 relative z-10"
+            className="flex flex-col items-center"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
+            style={{ perspective: "1000px" }}
         >
-            {/* Lanyard String */}
-            <div className="absolute -top-[20rem] left-1/2 -translate-x-1/2 w-4 h-[20rem] bg-zinc-900 border-x border-zinc-800 origin-bottom flex flex-col items-center justify-end z-[0]">
-                {/* Tag on lanyard - Lowered position and fixed Z-index */}
-                <div className="absolute bottom-16 w-8 h-12 bg-zinc-800 rounded flex items-center justify-center hover:bg-zinc-700 hover:scale-110 transition-all cursor-pointer shadow-lg z-20">
-                    <span className="text-[10px] text-zinc-500 rotate-90 tracking-widest font-mono">LABS</span>
+            {/* Lanyard with Tag - INSIDE NORMAL FLOW */}
+            <div className="flex flex-col items-center mb-[-20px] z-10">
+                {/* Tag - Horizontal text for visibility */}
+                <div className="px-3 py-2 bg-zinc-800 rounded-lg flex items-center justify-center mb-2 hover:bg-zinc-700 hover:scale-105 transition-all cursor-pointer shadow-lg border border-zinc-700">
+                    <span className="text-[10px] text-zinc-300 tracking-widest font-mono font-bold">LABS</span>
                 </div>
+                {/* Lanyard Strap */}
+                <div className="w-3 h-16 bg-zinc-900 rounded-sm" />
                 {/* Clip */}
-                <div className="w-8 h-8 border-4 border-zinc-800 rounded-lg mb-[-20px] bg-zinc-900 relative z-10" />
+                <div className="w-8 h-6 border-4 border-zinc-700 bg-zinc-800 rounded-md" />
             </div>
 
+            {/* Card */}
             <motion.div
                 ref={cardRef}
                 style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-                className="w-[300px] h-[450px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden relative z-10"
+                className="w-[280px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden relative"
             >
                 {/* Card Header */}
-                <div className="h-32 bg-zinc-950 relative overflow-hidden flex items-center justify-center">
-                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_2px_2px,_#333_1px,_transparent_0)] bg-[size:16px_16px]" />
-                    <div className="text-white font-bold tracking-widest text-xl z-10 flex items-center gap-2">
+                <div className="h-28 bg-zinc-950 relative overflow-hidden flex items-center justify-center">
+                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_2px_2px,_#444_1px,_transparent_0)] bg-[size:12px_12px]" />
+                    <div className="text-white font-bold tracking-widest text-lg z-10 flex items-center gap-2">
                         <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                         ENGINEER
                     </div>
                 </div>
 
-                {/* Photo Container - Adjusted Top Position */}
-                <div className="absolute top-24 left-1/2 -translate-x-1/2 w-32 h-32 bg-white dark:bg-zinc-900 rounded-xl p-1 shadow-lg rotate-3 overflow-hidden z-20">
-                    <Image
-                        src={`${BASE_PATH}/profile.jpg`}
-                        alt="Profile"
-                        width={128}
-                        height={128}
-                        className="w-full h-full object-cover rounded-lg bg-zinc-100"
-                        priority
-                    />
+                {/* Photo Container - Overlapping Header */}
+                <div className="relative flex justify-center" style={{ marginTop: "-48px" }}>
+                    <div className="w-24 h-24 bg-white dark:bg-zinc-800 rounded-xl p-1 shadow-xl rotate-3 overflow-hidden border-4 border-white dark:border-zinc-800">
+                        <Image
+                            src={`${BASE_PATH}/profile.jpg`}
+                            alt="Profile"
+                            width={96}
+                            height={96}
+                            className="w-full h-full object-cover rounded-lg"
+                            priority
+                        />
+                    </div>
                 </div>
 
-                {/* Info - Forced Padding using inline style to bypass Tailwind issues */}
-                <div className="pb-8 px-6 text-center space-y-2 relative z-10" style={{ paddingTop: '16rem' }}>
-                    <h2 className="text-xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight">
-                        Madhu Goutham<br />Reddy Ambati
+                {/* Info */}
+                <div className="pt-4 pb-6 px-6 text-center">
+                    <h2 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-50 leading-tight mb-1">
+                        Madhu Goutham Reddy Ambati
                     </h2>
-                    <div className="text-sm font-medium text-zinc-500 tracking-wide uppercase">
+                    <div className="text-xs font-medium text-zinc-500 tracking-wide uppercase mb-4">
                         Senior Data Scientist
                     </div>
 
-                    <div className="pt-6 flex justify-center gap-4">
-                        <div className="text-xs text-zinc-400 font-mono">
-                            ID: 8492-42
-                        </div>
-                        <div className="text-xs text-zinc-400 font-mono">
-                            EXP: 6+ YRS
-                        </div>
+                    <div className="flex justify-center gap-6 text-xs text-zinc-400 font-mono mb-4">
+                        <span>ID: 8492-42</span>
+                        <span>EXP: 6+ YRS</span>
                     </div>
 
-                    <div className="pt-6 w-full flex justify-center">
-                        {/* Barcode simulation */}
-                        <div className="h-8 w-4/5 flex justify-between items-end opacity-50">
-                            {[...Array(20)].map((_, i) => (
-                                <div key={i} className={`bg-zinc-900 dark:bg-zinc-100 w-[2px]`} style={{ height: Math.random() * 100 + "%" }} />
-                            ))}
-                        </div>
+                    {/* Barcode */}
+                    <div className="h-6 w-full flex justify-center gap-[2px] opacity-40">
+                        {[...Array(30)].map((_, i) => (
+                            <div
+                                key={i}
+                                className="bg-zinc-900 dark:bg-zinc-100"
+                                style={{ width: "2px", height: `${20 + Math.random() * 80}%` }}
+                            />
+                        ))}
                     </div>
                 </div>
             </motion.div>
