@@ -191,9 +191,9 @@ export default function Home() {
 
             <Reveal delay={0.1}>
               <h1 className="hero-name mb-8">
-                ML at 50M+ scale.<br />
-                <span className="text-[var(--foreground-muted)]">Production systems.</span><br />
-                <span className="text-[var(--foreground-muted)]">Real business impact.</span>
+                I ship ML that works.<br />
+                <span className="text-[var(--foreground-muted)]">50M events. 45ms latency.</span><br />
+                <span className="text-[var(--foreground-muted)]">$2M+ saved. Yearly.</span>
               </h1>
             </Reveal>
 
