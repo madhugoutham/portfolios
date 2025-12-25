@@ -49,23 +49,31 @@ export default function IDCard() {
             onMouseLeave={handleMouseLeave}
         >
             {/* Lanyard String */}
-            <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-1 h-32 bg-gradient-to-b from-zinc-800/0 via-zinc-800/50 to-zinc-900 origin-bottom flex flex-col items-center justify-end">
-                <div className="w-4 h-6 border-2 border-zinc-800 rounded-sm mb-[-10px]" />
+            <div className="absolute -top-[20rem] left-1/2 -translate-x-1/2 w-4 h-[20rem] bg-zinc-900 border-x border-zinc-800 origin-bottom flex flex-col items-center justify-end z-[-1]">
+                {/* Tag on lanyard */}
+                <div className="absolute bottom-32 w-8 h-12 bg-zinc-800 rounded flex items-center justify-center hover:bg-zinc-700 hover:scale-110 transition-all cursor-pointer">
+                    <span className="text-[10px] text-zinc-500 rotate-90 tracking-widest font-mono">LABS</span>
+                </div>
+                {/* Clip */}
+                <div className="w-8 h-8 border-4 border-zinc-800 rounded-lg mb-[-20px] bg-zinc-900" />
             </div>
 
             <motion.div
                 ref={cardRef}
                 style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-                className="w-[300px] h-[450px] bg-white dark:bg-zinc-900 rounded-2xl shadow-xl border border-zinc-200 dark:border-zinc-800 overflow-hidden relative"
+                className="w-[300px] h-[450px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-zinc-200 dark:border-zinc-800 overflow-hidden relative"
             >
                 {/* Card Header */}
                 <div className="h-32 bg-zinc-950 relative overflow-hidden flex items-center justify-center">
                     <div className="absolute inset-0 opacity-20 bg-[radial-gradient(circle_at_2px_2px,_#333_1px,_transparent_0)] bg-[size:16px_16px]" />
-                    <div className="text-white font-bold tracking-widest text-xl z-10">ENGINEER</div>
+                    <div className="text-white font-bold tracking-widest text-xl z-10 flex items-center gap-2">
+                        <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                        ENGINEER
+                    </div>
                 </div>
 
                 {/* Photo Container */}
-                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-white dark:bg-zinc-900 rounded-xl p-1 shadow-lg rotate-3 overflow-hidden">
+                <div className="absolute top-20 left-1/2 -translate-x-1/2 w-32 h-32 bg-white dark:bg-zinc-900 rounded-xl p-1 shadow-lg rotate-3 overflow-hidden z-20">
                     <Image
                         src={`${BASE_PATH}/profile.jpg`}
                         alt="Profile"
@@ -77,7 +85,7 @@ export default function IDCard() {
                 </div>
 
                 {/* Info */}
-                <div className="pt-32 pb-8 px-6 text-center space-y-2">
+                <div className="pt-64 pb-8 px-6 text-center space-y-2 relative z-10">
                     <h2 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50">
                         Madhu Goutham
                     </h2>

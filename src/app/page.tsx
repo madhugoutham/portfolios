@@ -76,6 +76,21 @@ const stats = [
   { value: "93.6%", label: "F1-Score" },
 ];
 
+const research = [
+  {
+    title: "Surface Water Detection using U-Net++ with Attention Mechanism",
+    venue: "IAHS Scientific Assembly",
+    year: "2024",
+    link: "#"
+  },
+  {
+    title: "AI-Driven Environmental Mapping for Sustainability",
+    venue: "IIN Sustainability Conference (3rd Prize)",
+    year: "2024",
+    link: "#"
+  }
+];
+
 // ============== HOOKS ==============
 
 function useTheme() {
@@ -161,8 +176,8 @@ export default function Home() {
 
       <div className="container-narrow pt-32 pb-24">
         {/* ===== HERO ===== */}
-        <section className="mb-32 min-h-[80vh] flex flex-col md:flex-row items-center md:items-start md:justify-between gap-12">
-          <div className="flex-1 md:pt-16 max-w-lg">
+        <section className="mb-32 min-h-[80vh] flex flex-col md:flex-row items-center md:items-start md:justify-between gap-8 md:gap-12">
+          <div className="flex-1 md:pt-16 min-w-0">
             <Reveal>
               <div className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -209,7 +224,7 @@ export default function Home() {
           </div>
 
           <Reveal delay={0.4}>
-            <div className="hidden md:block pt-12">
+            <div className="hidden md:block pt-12 flex-shrink-0">
               <IDCard />
             </div>
             {/* Mobile Fallback */}
@@ -224,6 +239,30 @@ export default function Home() {
               />
             </div>
           </Reveal>
+        </section>
+
+        {/* ===== RESEARCH ===== */}
+        <section className="mb-32">
+          <Reveal>
+            <p className="section-label">Research</p>
+          </Reveal>
+          <div className="space-y-6">
+            {research.map((paper, i) => (
+              <Reveal key={i} delay={i * 0.1}>
+                <a href={paper.link} className="block group">
+                  <div className="flex justify-between items-baseline gap-4">
+                    <h3 className="text-lg font-medium group-hover:underline decoration-zinc-400 underline-offset-4 transition-all">
+                      {paper.title}
+                    </h3>
+                    <span className="text-sm font-mono text-[var(--foreground-muted)] flex-shrink-0">{paper.year}</span>
+                  </div>
+                  <p className="text-sm text-[var(--foreground-muted)] mt-1 group-hover:text-[var(--foreground-secondary)] transition-colors">
+                    {paper.venue}
+                  </p>
+                </a>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* ===== STATS ===== */}
