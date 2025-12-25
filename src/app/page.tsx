@@ -183,24 +183,24 @@ export default function Home() {
         <section className="mb-32 md:min-h-[80vh] flex flex-col md:flex-row items-start md:justify-between gap-12 pt-16 md:pt-8 overflow-visible">
           <div className="flex-1 md:pt-16 min-w-0 w-full">
             <Reveal>
-              <div className="inline-flex items-center gap-2 mb-8 px-3 py-1 bg-zinc-100 dark:bg-zinc-800 rounded-full">
-                <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-                <span className="text-xs font-medium text-zinc-600 dark:text-zinc-400">Open to opportunities</span>
+              <div className="inline-flex items-center gap-2 mb-8 px-4 py-1.5 bg-emerald-100 dark:bg-emerald-900/30 rounded-full border border-emerald-200 dark:border-emerald-800">
+                <span className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
+                <span className="text-xs font-semibold text-emerald-700 dark:text-emerald-400">Open to opportunities</span>
               </div>
             </Reveal>
 
             <Reveal delay={0.1}>
               <h1 className="hero-name mb-8">
-                I ship ML that works.<br />
-                <span className="text-[var(--foreground-muted)]">50M events. 45ms latency.</span><br />
-                <span className="text-[var(--foreground-muted)]">$2M+ saved. Yearly.</span>
+                I reduce fraud losses by 38%<br />
+                <span className="text-[var(--foreground-muted)]">and save $2M+ yearly</span><br />
+                <span className="text-[var(--foreground-muted)]">through real-time ML.</span>
               </h1>
             </Reveal>
 
             <Reveal delay={0.2}>
               <p className="body-text mb-8">
-                6+ years deploying ML at scale. Currently at KeyBank,
-                previously Experian. Specialized in fraud detection, real-time scoring, and GenAI.
+                Senior Data Scientist helping financial institutions prevent fraud at scale.
+                6+ years at KeyBank, Experian, & TCS. Specialized in real-time scoring and GenAI.
               </p>
             </Reveal>
 

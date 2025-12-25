@@ -125,24 +125,24 @@ export default function IDCard() {
 
                     {/* Info */}
                     <div className="pt-4 pb-6 px-6 text-center">
-                        <h2 className="text-lg font-bold tracking-tight text-zinc-900 dark:text-zinc-100 leading-tight mb-1">
+                        <h2 className="text-lg font-bold tracking-tight text-zinc-800 dark:text-zinc-100 leading-tight mb-1" style={{ textShadow: '0 1px 0 rgba(255,255,255,0.5)' }}>
                             Madhu Goutham Reddy Ambati
                         </h2>
-                        <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400 tracking-wide uppercase mb-4">
+                        <div className="text-xs font-semibold text-zinc-700 dark:text-zinc-300 tracking-wide uppercase mb-4" style={{ textShadow: '0 1px 0 rgba(255,255,255,0.3)' }}>
                             Senior Data Scientist
                         </div>
 
-                        <div className="flex justify-center gap-6 text-xs text-zinc-500 dark:text-zinc-400 font-mono mb-4">
+                        <div className="flex justify-center gap-6 text-xs text-zinc-600 dark:text-zinc-400 font-mono font-medium mb-4">
                             <span>ID: 1212</span>
                             <span>EXP: 6+ YRS</span>
                         </div>
 
                         {/* Barcode - Grey tones */}
-                        <div className="h-6 w-full flex justify-center gap-[2px] opacity-40">
+                        <div className="h-6 w-full flex justify-center gap-[2px] opacity-50">
                             {[...Array(30)].map((_, i) => (
                                 <div
                                     key={i}
-                                    className="bg-zinc-800 dark:bg-zinc-400"
+                                    className="bg-zinc-700 dark:bg-zinc-400"
                                     style={{ width: "2px", height: `${25 + Math.random() * 75}%` }}
                                 />
                             ))}
