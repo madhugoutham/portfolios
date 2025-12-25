@@ -17,24 +17,28 @@ const socialLinks = [
 
 const experiences = [
   {
+    id: "keybank",
     company: "KeyBank",
     role: "Senior Data Scientist",
     period: "2024 — Present",
     description: "Leading fraud detection ML initiatives, reducing false positives to 2%",
   },
   {
+    id: "niu",
     company: "Northern Illinois University",
     role: "Data Scientist (GRA)",
     period: "2023 — 2024",
     description: "Published research on environmental AI, won 3rd prize at IIN 2024",
   },
   {
+    id: "tcs-experian",
     company: "TCS / Experian",
     role: "Data Scientist",
     period: "2021 — 2023",
     description: "Built fraud scoring system saving $2.3M annually",
   },
   {
+    id: "stanley",
     company: "Stanley Black & Decker",
     role: "Data Scientist",
     period: "2019 — 2021",
@@ -294,8 +298,8 @@ export default function Home() {
           </Reveal>
           <div>
             {experiences.map((exp, i) => (
-              <Reveal key={exp.company} delay={i * 0.05}>
-                <div className="experience-item group">
+              <Reveal key={exp.id} delay={i * 0.05}>
+                <Link href={`/experience/${exp.id}`} className="experience-item group cursor-pointer">
                   <div className="flex-1">
                     <div className="flex items-baseline gap-2 mb-1">
                       <span className="font-medium">{exp.role}</span>
@@ -306,10 +310,13 @@ export default function Home() {
                       {exp.description}
                     </p>
                   </div>
-                  <span className="text-sm text-[var(--foreground-muted)] whitespace-nowrap ml-4">
-                    {exp.period}
-                  </span>
-                </div>
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm text-[var(--foreground-muted)] whitespace-nowrap">
+                      {exp.period}
+                    </span>
+                    <span className="text-[var(--foreground-muted)] group-hover:translate-x-1 transition-transform">→</span>
+                  </div>
+                </Link>
               </Reveal>
             ))}
           </div>
