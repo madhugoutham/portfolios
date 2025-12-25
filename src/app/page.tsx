@@ -201,9 +201,13 @@ export default function Home() {
             </Reveal>
 
             <Reveal delay={0.3}>
-              <div className="flex items-center gap-4">
+              <div className="flex flex-wrap items-center gap-4">
                 <a href="https://calendly.com" target="_blank" rel="noopener noreferrer" className="btn bg-[var(--foreground)] text-[var(--background)] border-transparent hover:opacity-90">
                   Schedule a Call
+                </a>
+                <a href="/portfolios/resume.pdf" download className="btn">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg>
+                  Resume
                 </a>
                 <div className="flex gap-4 px-4 border-l border-[var(--border)]">
                   {socialLinks.map((link) => (

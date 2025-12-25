@@ -193,15 +193,16 @@ export default function ProjectDetailClient({ slug }: { slug: string }) {
         <main className="min-h-screen bg-[var(--background)] text-[var(--foreground)] pb-32">
             {/* Header */}
             <header className="fixed top-0 w-full bg-[var(--background)]/80 backdrop-blur-md z-50 border-b border-[var(--border)]">
-                <div className="max-w-[768px] mx-auto px-6 h-14 flex items-center justify-between">
+                <div className="max-w-[960px] mx-auto px-6 h-14 flex items-center justify-between">
                     <Link href="/" className="text-sm font-medium hover:text-[var(--foreground-muted)] transition-colors">
-                        ← Back to Portfolio
+                        ← Back
                     </Link>
+                    <span className="text-sm font-medium">Madhu Goutham Reddy Ambati</span>
                     <span className="text-xs uppercase tracking-widest text-[var(--foreground-muted)]">{project.category}</span>
                 </div>
             </header>
 
-            <div className="max-w-[768px] mx-auto px-6 pt-32">
+            <div className="max-w-[960px] mx-auto px-6" style={{ paddingTop: '120px' }}>
                 {/* Hero */}
                 <Reveal>
                     <div className="mb-20">
